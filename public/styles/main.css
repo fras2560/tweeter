@@ -1,0 +1,130 @@
+body {
+    background-color: #cccaca;
+    background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+}
+
+.container {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-tweet {
+    margin: 0 auto;
+    width: 80%;
+    color: black;
+}
+
+.new-tweet__header {
+    color: black;
+}
+
+.new-tweet__header {
+    color: black;
+}
+.new-tweet__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.new-tweet__inputs__label {
+}
+
+.new-tweet__inputs__text {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: solid black;
+}
+
+.new-tweet__controls {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.new-tweet__controls__action {
+    background-color: #4056A1;
+    color: white;
+    padding: 0.25em 0.5em;
+}
+
+.new-tweet__controls__counter {
+    color: #4056A1;
+    padding: 0.25em 0.5em;
+}
+
+.new-tweet__controls__counter.error {
+    color: red;
+}
+
+
+.tweets {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.tweets .tweet {
+    border: 5px solid #4056A1;
+    padding: 20px;
+    width: 70vw;
+}
+
+.tweets .tweet:hover {
+    box-shadow: 10px 5px 5px #4056A1;
+}
+
+.tweets .tweet .tweet__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tweets .tweet .tweet__header .header__user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.tweets .tweet .tweet__header .header__user .avatar {
+    max-width: 75px;
+    background-color: transparent;
+}
+
+.tweets .tweet .tweet__body {
+    padding-bottom: 20px;
+}
+
+
+.tweets .tweet .tweet__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 5px solid #4056A1;
+    padding-top: 5px;
+}
+
+.tweets .tweet .tweet__footer .footer__date {
+    line-height: 0;
+}
+
+.tweets .tweet .tweet__footer .footer__controls i:hover {
+    color: #4056A1;
+    cursor: pointer;
+}
+
+.grey {
+    color: #909ba6;
+}

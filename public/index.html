@@ -7,23 +7,104 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+    <nav class="nav">
+      <div class="nav__header bungee">
+        <h1>tweeter</h1>
+      </div>
+      <div class="nav__secondary">
+        <p class="nav_secondary__description">
+          <strong>Write</strong> a new tweet
+        </p>
+        <i class="fa-solid fa-angles-down nav__secondary__icon"></i>
+      </div>
     </nav>
+    <header class="header">
+      <img class="header__image" src="/images/profile-hex.png">
+      <h2 class="header__name">
+        Dallas Fraser
+      </h2>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2 class="new-tweet__header">Compose Tweet</h2>
+        <form action="/tweets/" method="post">
+          <div class="new-tweet__inputs">
+            <label class="new-tweet__inputs__label" for="tweet-text">
+              What are you humming about?
+            </label>
+            <textarea class="new-tweet__inputs__text" id="new-tweet__inputs__text" name="text" id="tweet-text"></textarea>
+          </div>
+          
+          <div class="new-tweet__controls">
+            <button class="new-tweet__controls__action bungee" type="submit">
+              Tweet
+            </button>
+            <output 
+              name="counter"
+              class="new-tweet__controls__counter counter bungee"
+              for="tweet-text"
+              id="tweet-character-limit">
+              140
+            </output>
+          </div>
+        </form>
+      </section>
+      <section class="tweets">
+        <article class="tweet">
+          <header class="tweet__header">
+            <div class="header__user">
+              <i class="fa-solid fa-user"></i>
+              <h2 class="user__name">
+                Rhoda Jacobs
+              </h2>
+            </div>
+            <h2 class="header_handle grey">
+              @MrsJacobs
+            </h2>
+          </header>
+          <section class="tweet__body">
+            Hello world!
+          </section>
+          <footer class="tweet__footer">
+            <p class="footer__date">
+              10 days ago
+            </p>
+            <div class="footer__controls">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>
