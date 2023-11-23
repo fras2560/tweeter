@@ -3,7 +3,6 @@ $(document).ready(function() {
     const counterElement = $('#tweet-character-limit');
     const remainingTextLength = 140 - value;
 
-    console.log(`Updating counter: ${remainingTextLength}`);
     counterElement.html(remainingTextLength);
     if (remainingTextLength < 0) {
       counterElement.addClass('error');
@@ -18,13 +17,11 @@ $(document).ready(function() {
 
   const element = getTweetInputElement()[0];
   if (element) {
-    console.log(element);
     updateCounter(element.value.length)
   }
   
 
   getTweetInputElement().on('input', function(event) {
-    console.log(event);
     const element = event.target;
     if (!element) {
       return;
