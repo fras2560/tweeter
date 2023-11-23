@@ -128,3 +128,7 @@ body {
 .grey {
     color: #909ba6;
 }
+
+.error {
+    color: red;
+}

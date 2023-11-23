@@ -65,11 +65,12 @@ const  createTweetElement = function(data) {
 
 
 const clearErrorMessage = function() {
-  $('#errorMessage').remove();
+  $('#errorMessage').slideUp();
 }
 
 const displayErrorMessage = function(error) {
-  $("#new-tweet__inputs").append(`<label id="errorMessage" class="error" for="text" id=errorMessage>${error}</label>`);
+  $("#errorMessage").text(`${error}`);
+  $("#errorMessage").slideDown();
 };
 
 
@@ -79,7 +80,7 @@ const sendTweet = function(form) {
   clearErrorMessage();
   const formData = form.serializeArray();
   if(formData.length === 0 || formData[0].value.length === 0) {
-    displayErrorMessage("Missing content of tweet");
+    displayErrorMessage("Empty tweet");
     return;
   }
 
