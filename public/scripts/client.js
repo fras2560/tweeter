@@ -24,6 +24,12 @@ const renderTweets = function(tweets) {
   });
 }
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const  createTweetElement = function(data) {
   const dateLabel = timeago.format(data.created_at);
   return `
@@ -41,7 +47,7 @@ const  createTweetElement = function(data) {
     </h2>
   </header>
   <section class="tweet__body">
-    ${data.content.text}
+    ${escape(data.content.text)}
   </section>
   <footer class="tweet__footer">
     <p class="footer__date">
@@ -67,10 +73,11 @@ const displayErrorMessage = function(error) {
 };
 
 
+
+
 const sendTweet = function(form) {
   clearErrorMessage();
   const formData = form.serializeArray();
-  console.log(formData);
   if(formData.length === 0 || formData[0].value.length === 0) {
     displayErrorMessage("Missing content of tweet");
     return;
@@ -80,7 +87,6 @@ const sendTweet = function(form) {
     displayErrorMessage("Tweet is too long");
     return;
   }
-  console.log(form.serializeArray());
   $.post("/tweets/", form.serializeArray(), (result) => {
     loadTweets();
   });
