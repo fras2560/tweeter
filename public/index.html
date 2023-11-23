@@ -20,6 +20,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -54,12 +55,13 @@
     <main class="container">
       <section class="new-tweet">
         <h2 class="new-tweet__header">Compose Tweet</h2>
-        <form action="/tweets/" method="post">
-          <div class="new-tweet__inputs">
-            <label class="new-tweet__inputs__label" for="tweet-text">
+        <form action="/tweets/" method="post" id="new-tweet__form">
+          <div class="new-tweet__inputs" id="new-tweet__inputs">
+            <label class="new-tweet__inputs__label" for="text">
               What are you humming about?
             </label>
-            <textarea class="new-tweet__inputs__text" id="new-tweet__inputs__text" name="text" id="tweet-text"></textarea>
+            <textarea class="new-tweet__inputs__text" id="new-tweet__inputs__text" name="text"></textarea>
+            <label id="errorMessage" for="tweet-text"></label>
           </div>
           
           <div class="new-tweet__controls">
@@ -76,33 +78,8 @@
           </div>
         </form>
       </section>
-      <section class="tweets">
-        <article class="tweet">
-          <header class="tweet__header">
-            <div class="header__user">
-              <i class="fa-solid fa-user"></i>
-              <h2 class="user__name">
-                Rhoda Jacobs
-              </h2>
-            </div>
-            <h2 class="header_handle grey">
-              @MrsJacobs
-            </h2>
-          </header>
-          <section class="tweet__body">
-            Hello world!
-          </section>
-          <footer class="tweet__footer">
-            <p class="footer__date">
-              10 days ago
-            </p>
-            <div class="footer__controls">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+      <section class="tweets" id="tweets">
+
       </section>
     </main>
     <footer></footer>
