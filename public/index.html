@@ -15,7 +15,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
 
     <!-- External JS -->
@@ -44,44 +43,47 @@
         <i class="fa-solid fa-angles-down nav__secondary__icon"></i>
       </div>
     </nav>
-    <header class="header">
-      <img class="header__image" src="/images/profile-hex.png">
-      <h2 class="header__name">
-        Dallas Fraser
-      </h2>
-    </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2 class="new-tweet__header">Compose Tweet</h2>
-        <form action="/tweets/" method="post" id="new-tweet__form">
-          <div class="new-tweet__inputs" id="new-tweet__inputs">
-            <label class="new-tweet__inputs__label" for="text">
-              What are you humming about?
-            </label>
-            <textarea class="new-tweet__inputs__text" id="new-tweet__inputs__text" name="text"></textarea>
-            <label id="errorMessage" class="error" for="text"></label>
-          </div>
-          
-          <div class="new-tweet__controls">
-            <button class="new-tweet__controls__action bungee" type="submit">
-              Tweet
-            </button>
-            <output 
-              name="counter"
-              class="new-tweet__controls__counter counter bungee"
-              for="tweet-text"
-              id="tweet-character-limit">
-              140
-            </output>
-          </div>
-        </form>
-      </section>
-      <section class="tweets" id="tweets">
-
-      </section>
-    </main>
+    <div class="app-container">
+      <header class="header">
+        <img class="header__image" src="/images/profile-hex.png">
+        <h2 class="header__name">
+          Dallas Fraser
+        </h2>
+      </header>
+  
+      <!-- Page-specific (main) content here -->
+      <main>
+        <section class="new-tweet">
+          <h2 class="new-tweet__header">Compose Tweet</h2>
+          <form action="/tweets/" method="post" id="new-tweet__form">
+            <div class="new-tweet__inputs" id="new-tweet__inputs">
+              <label class="new-tweet__inputs__label" for="text">
+                What are you humming about?
+              </label>
+              <textarea class="new-tweet__inputs__text" id="new-tweet__inputs__text" name="text"></textarea>
+              <label id="errorMessage" class="error" for="text"></label>
+            </div>
+            
+            <div class="new-tweet__controls">
+              <button class="new-tweet__controls__action bungee" type="submit">
+                Tweet
+              </button>
+              <output 
+                name="counter"
+                class="new-tweet__controls__counter counter bungee"
+                for="tweet-text"
+                id="tweet-character-limit">
+                140
+              </output>
+            </div>
+          </form>
+        </section>
+        <section class="tweets" id="tweets">
+  
+        </section>
+      </main>
+    </div>
     <footer></footer>
   </body>
 </html>

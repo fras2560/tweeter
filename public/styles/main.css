@@ -76,8 +76,20 @@ body {
 .tweets .tweet {
     border: 5px solid #4056A1;
     padding: 20px;
-    width: 70vw;
+    width: 50vw;
+    max-width: 70vw;
 }
+
+  /* Another tablet breakpoint is minimum width of 768px */
+  @media only screen and (max-width: 768px) {
+    /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+    .tweets .tweet {
+        border: 5px solid #4056A1;
+        padding: 20px;
+        width: 90vw;
+        max-width: 90vw;
+    }
+  }
 
 .tweets .tweet:hover {
     box-shadow: 10px 5px 5px #4056A1;

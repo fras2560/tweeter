@@ -1,8 +1,9 @@
 .nav {
     padding-left: 1.5em;
     padding-right: 1.5em;
-    height: 120px;
+    height: 90px;
     background-color: #4056A1;
+    
     color: #FFFFFF;
     width: 100%;
     display: flex;
@@ -28,3 +29,63 @@
 .nav__secondary__icon {
     color: red;
 }
+
+.header {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #28a745;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    margin-left: 5%;
+}
+
+.header__image {
+    display: block;
+}
+
+.header__name {
+    color: white;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+main {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5em;
+}
+
+
+  /* Another tablet breakpoint is minimum width of 768px */
+  @media only screen and (max-width: 768px) {
+    /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+    .header {
+        padding-top: 150px;
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .nav {
+        padding-top: 0px;
+        background-color: #28a745;
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    }
+
+    .app-container{
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        width: 100%;
+        padding-top: 20px;
+    }
+  }
